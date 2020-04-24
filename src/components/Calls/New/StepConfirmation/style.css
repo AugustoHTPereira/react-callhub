@@ -1,0 +1,37 @@
+.ContentConfirmation {
+  width: 100%;
+  animation: fadeInRight 200ms ease-in;
+}
+
+.ContentConfirmation .CallTitle {
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.ContentConfirmation .CallDescription {
+  color: #777;
+}
+
+.ContentConfirmation .CallPriority {
+  color: #777;
+}
+
+.ContentConfirmation .Options {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContentConfirmation .Options .Btn {
+  color: white;
+  font-weight: 600;
+  background-color: #2274a5;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.ContentConfirmation .Options .Btn:hover {
+  filter: brightness(115%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,35 @@
+header.HeaderCall {
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+header.HeaderCall ul {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+}
+
+header.HeaderCall li {
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  cursor: pointer;
+}
+
+header.HeaderCall li.Actived {
+  border-bottom: 2px solid #2274a5;
+  cursor: default;
+  animation: animateActived 200ms ease-out;
+  font-weight: 600;
+  color: #434343;
+  transition: 200ms;
+}
+
+@keyframes animateActived {
+  0% {
+    border-bottom-color: transparent;
+  }
+}

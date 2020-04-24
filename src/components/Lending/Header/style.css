@@ -1,0 +1,41 @@
+.LendingHeader {
+  width: 100%;
+  padding: 0 45px;
+  height: 45px;
+  color: #f9f9f9;
+  background-color: #2274a5;
+  filter: brightness(90%);
+  display: flex;
+  align-items: center;
+}
+
+.LendingHeader .Brand {
+  flex: 1
+}
+
+.LendingHeader .Brand h1 {
+  font-weight: 600;
+  cursor: default;
+}
+
+.LendingHeader .Actions > * {
+  margin-right: 15px;
+  color: #f9f9f9;
+}
+
+.LendingHeader .Actions > *:last-child {
+  margin-right: 0;
+}
+
+.LendingHeader .Actions .Button {
+  background-color: #f9f9f9;
+  color: #2274a5;
+  padding: 0 12px;
+  border-radius: 4px;
+  transition: 200ms;
+}
+
+.LendingHeader .Actions .Button:hover {
+  filter: brightness(115%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}

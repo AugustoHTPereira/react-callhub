@@ -1,0 +1,27 @@
+.ContentNotFound {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.ContentNotFound h1 {
+  color: #2274A5;
+  font-size: 172px;
+  margin: 0;
+  text-shadow: 0 10px 4px rgba(0, 0, 0, 0.15);
+  line-height: 162px;
+}
+
+.ContentNotFound p {
+  color: #434343;
+  font-size: 22px;
+}
+
+.ContentNotFound .Options {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,13 @@
+.RegisterComponentContent {
+  animation: fadeInRight 200ms ease-in-out;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  100% {
+    opacity: 1;
+  }
+}

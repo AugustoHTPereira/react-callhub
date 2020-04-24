@@ -1,0 +1,32 @@
+.ContentData {
+  width: 100%;
+  animation: fadeInRight 200ms ease-in;
+}
+
+.ContentData input[type="text"], .ContentData textarea {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.ContentData textarea {
+  min-height: 100%;
+}
+
+.ContentData .Options {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.ContentData .Options button {
+  color: white;
+  font-weight: 600;
+  background-color: #2274a5;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.ContentData .Options button:hover {
+  filter: brightness(115%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eaf1f7;
+  font-family: "Baloo Thambi 2", cursive !important;
+  font-size: 16px;
+  color: #434343;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #2274a5;
+  text-decoration: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  padding: 0 12px;
+  min-height: 45px;
+  font-size: 16px;
+  color: #434343;
+  transition: 200ms;
+  outline: none;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-bottom-color: #2274a5;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  border-radius: 4px;
+  background-color: #ccc;
+  border: 0;
+  padding: 0 22px;
+  min-height: 45px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #434343;
+  font-family: "Baloo Thambi 2", cursive !important;
+}
+
+.Link {
+  background-color: transparent;
+  border: none;
+  color: #2274a5;
+  text-decoration: none;
+  font-family: "Baloo Thambi 2", cursive !important;
+  font-size: 16px;
+  text-transform: unset;
+  min-height: unset;
+  padding: unset;
+  cursor: pointer;
+}
+
+input.invalid {
+  border-bottom-color: #a52222;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Page global styles */
+.PageContent .Container {
+  width: 100%;
+  width: calc(100% - 90px);
+
+  margin: 25px auto 0;
+
+  height: 100%;
+  min-height: 150px;
+
+  display: flex;
+}
+
+.PageTitle {
+  color: #777;
+  font-weight: 600;
+}
+
+
+/* Disabled */
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+  cursor: no-drop !important;
+  filter: brightness(150%) !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+
+a:disabled {
+  color: #777;
+}

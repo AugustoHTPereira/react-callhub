@@ -1,0 +1,461 @@
+.DetailsCallContent > .Container .Identity {
+  color: #ccc !important;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.DetailsCallContent > .Container > .Content {
+  width: 100%;
+  max-width: 1080px;
+}
+
+.DetailsCallContent > .Container > .Content > .CallTitle {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 26px;
+  margin-top: 25px;
+  text-align: justify;
+}
+
+.DetailsCallContent > .Container > .Content > .CallDescription {
+  color: #777;
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: justify;
+
+  padding: 0 15px 25px;
+  width: 100%;
+}
+
+.DetailsCallContent > .Container > .Content > .Details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #999;
+  padding-bottom: 15px;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation {
+  width: 18px;
+  height: 18px;
+  background-color: #777;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 200ms;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation span.Text {
+  display: none;
+  user-select: none;
+  cursor: default;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation:hover {
+  width: fit-content;
+  height: 18px;
+  padding: 0 12px;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation:hover span {
+  display: block;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation.Success {
+  background-color: green;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation.Danger {
+  background-color: red;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation.Info {
+  background-color: lightseagreen;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation.Primary {
+  background-color: #2274a5;
+}
+
+.DetailsCallContent > .Container > .Content > .Details > .Situation.Warning {
+  background-color: orange;
+}
+
+.DetailsCallContent > .Container > .Content > .Separator {
+  height: 2px;
+  width: 100%;
+  display: block;
+  background-color: #2274a5;
+  border-radius: 4px;
+  margin: 12px 0;
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs {
+  display: flex;
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs > .Attach {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  width: 100px;
+  min-height: 120px;
+  overflow: hidden;
+  margin: 5px;
+  transition: 200ms;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs > .Attach img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  background-color: #777;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > .Attachs
+  > .Attach
+  > .Attach-Details {
+  padding: 5px 8px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > .Attachs
+  > .Attach
+  > .Attach-Details
+  span {
+  color: #777;
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs > .Attach:hover {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs > .Attach > .Attach-PDF {
+  color: red;
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent > .Container > .Content > .Attachs > .Attach > .Attach-XLS {
+  color: green;
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > .Attachs
+  > .Attach
+  > .Attach-Default {
+  color: #2274a5;
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent > .Container > .Content > div > .TimeLine {
+  list-style-type: none;
+  margin-bottom: 55px;
+}
+
+.DetailsCallContent > .Container > .Content > div > .TimeLine > .HistoricItem {
+  background-color: #f9f9f9;
+  margin: 15px 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 5px 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  i.TextGray {
+  color: #999;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  .Right {
+  text-align: right;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs {
+  display: flex;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 5px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > p {
+  font-size: 14px;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li:hover {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  *:nth-child(1) {
+  margin-right: 15px;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > img {
+  width: 75px;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > .Attach-XLS {
+  color: green;
+  width: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > .Attach-PDF {
+  color: red;
+  width: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > .Attach-Default {
+  color: #2274a5;
+  width: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > .Attach-Details {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div
+  > .TimeLine
+  > .HistoricItem
+  > .Attachs
+  > li
+  > .Attach-Details
+  > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response {
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response textarea {
+  width: 100% !important;
+  resize: none;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response select {
+  height: 45px;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  padding: 5px 15px;
+  font-size: 16px;
+  color: #434343;
+  font-family: "Baloo Thambi 2", cursive !important;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response .Actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response .Actions .Btn,
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div.Response
+  .Actions
+  .BtnConfirm {
+  margin-left: 25px;
+  color: white;
+  background-color: #2274a5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.DetailsCallContent > .Container > .Content > div.Response .Actions .Btn:hover,
+.DetailsCallContent
+  > .Container
+  > .Content
+  > div.Response
+  .Actions
+  .BtnConfirm:hover {
+  filter: brightness(105%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.DetailsCallContent > .Container > .Content > div.Response .Modal {
+  animation: fadeIn 100ms ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}

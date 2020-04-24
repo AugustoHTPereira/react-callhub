@@ -1,0 +1,18 @@
+.ContentLanding {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ContentLanding section {
+  min-height: 100vh;
+}
+
+.ContentLanding section.Dark {
+  background-color: #2274a5;
+}
+
+.ContentLanding section.Bipolar {
+  width: 100%;
+}

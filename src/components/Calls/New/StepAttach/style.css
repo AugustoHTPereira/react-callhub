@@ -1,0 +1,56 @@
+.ContentAttach {
+  width: 100%;
+  animation: fadeInRight 200ms ease-in;
+}
+
+.ContentAttach .Attachs {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.ContentAttach .Attachs ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ContentAttach .Attachs .Attach {
+  height: 125px;
+  min-width: 125px;
+  border: 2px dashed #434343;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 5px;
+}
+
+.ContentAttach .Attachs .Attach.New input {
+  display: none;
+}
+
+.ContentAttach .Attachs .Attach.New {
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContentAttach .Options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.ContentAttach .Options .Btn {
+  color: white;
+  font-weight: 600;
+  background-color: #2274a5;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.ContentAttach .Options .Btn:hover {
+  filter: brightness(115%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}

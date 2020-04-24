@@ -1,0 +1,28 @@
+.LoginContent {
+  width: 100%;
+}
+
+.LoginContent::after {
+  content: "";
+  height: 60%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  background: #2274a522;
+}
+
+.LoginContent .Centered {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 116px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .LoginContent .Centered {
+    margin-top: 25px;
+  }
+}

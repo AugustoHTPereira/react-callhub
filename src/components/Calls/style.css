@@ -1,0 +1,118 @@
+.CallsContent {
+  width: 100%;
+}
+
+.CallsContent .StaticNew {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  font-size: 28px;
+  background-color: #2274a5;
+  color: white;
+
+  animation: shadow infinite 1s;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.CallsContent .StaticNew:hover {
+  filter: brightness(115%);
+  box-shadow: 0 7px 4px rgba(0, 0, 0, 0.25);
+  animation: none;
+}
+
+@keyframes shadow {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: lightgray;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+/* Call list */
+.CallList {
+  width: 100%;
+  list-style-type: none;
+  animation: fadeInTop 200ms ease-in-out;
+  margin-bottom: 55px;
+}
+
+.CallList .Call {
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 15px;
+  border-radius: 4px;
+  padding: 5px 15px;
+  display: flex;
+  cursor: pointer;
+}
+
+.CallList .Call .CallData {
+  display: flex;
+  flex: 1;
+}
+
+.CallList .Call .CallData .Details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.CallList .Call .CallData .Details .Title {
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.CallList .Call .CallData .Details .Description {
+  font-weight: 200;
+  font-size: 14px;
+  color: #777;
+}
+
+.CallList .Call .CallData .Situation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 15px;
+}
+
+.CallList .Call .CallData .Situation .Badge {
+  background-color: #434343;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.CallList .Call .CallData .Situation .Badge.Success {
+  background-color: green;
+}
+
+.CallList .Call .CallData .Situation .Badge.Danger {
+  background-color: red;
+}
+
+.CallList .Call .CallData .Situation .Badge.Warning {
+  background-color: orange;
+}
+
+@keyframes fadeInTop {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+}

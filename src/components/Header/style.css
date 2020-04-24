@@ -1,0 +1,44 @@
+.Navbar {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 45px;
+}
+
+.Navbar .BrandCrumb h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.Navbar .Items {
+  height: 100%;
+}
+
+.Navbar .Items ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 100%;
+}
+
+.Navbar .Items ul li {
+  margin: 0 6px;
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+  transition: 200ms;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Navbar .Items ul li:last-child {
+  margin-right: 0;
+}
+
+.Navbar .Items ul li:hover {
+  color: #434343;
+}

@@ -1,0 +1,71 @@
+.ContentPriority {
+  width: 100%;
+  animation: fadeInRight 200ms ease-in;
+}
+
+.ContentPriority .Priorities {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ContentPriority .Priority {
+  height: 100%;
+  width: 100%;
+  max-width: 250px;
+  margin: 25px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 25px;
+  text-transform: unset;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.ContentPriority .Priority:hover,.ContentPriority .Priority:focus   {
+  filter: brightness(115%);
+  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+  border-radius: 7px;
+}
+
+.ContentPriority .Priority.Low {
+  background-color: #5f8541;
+}
+
+.ContentPriority .Priority.Medium {
+  background-color: #bb9642;
+}
+
+.ContentPriority .Priority.High {
+  background-color: #854141;
+}
+
+.ContentPriority .Priority h1 {
+  font-size: 18px;
+  color: #f9f9f9;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ContentPriority .Priority p {
+  font-size: 12px;
+  color: #eee;
+}
+
+.ContentPriority .Options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.ContentPriority .Options {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+}
