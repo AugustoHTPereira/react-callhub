@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import api from "../../services/Api";
+import { post, get } from "../../services/Api";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as UserActions from "../../store/actions/User";
@@ -13,6 +13,7 @@ class Register extends Component {
 
     this.state = {
       name: "",
+      surname: "",
       email: "",
       password: "",
       passwordconfirmation: "",
@@ -22,15 +23,22 @@ class Register extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await api.post("accounts", this.state);
+      if (this.state.name.trim().split(" ").length > 0) {
+        await this.setState({
+          ...this.state,
+          name: this.state.name.trim().split(" ")[0],
+          surname: this.state.name.trim().split(" ")[
+            this.state.name.trim().split(" ").length - 1
+          ],
+        });
+        console.log(this.state);
+      }
 
-      const {
-        accessToken,
-        refreshToken,
-        expiressAt,
-      } = response.data;
+      const response = await post("accounts", this.state);
 
-      const responseDetails = await api.get("/users/details", {
+      const { accessToken, refreshToken, expiressAt } = response.data;
+
+      const responseDetails = await get("/users/details", {
         headers: {
           Authorization: "Bearer " + accessToken,
         },
@@ -49,9 +57,7 @@ class Register extends Component {
 
       this.props.next("COMPANY");
     } catch (error) {
-      alert(
-        "Ocorreu algum erro ao tentar te cadastrar. Verifique os dados e tente novamente!"
-      );
+      console.log(error);
     }
   };
 

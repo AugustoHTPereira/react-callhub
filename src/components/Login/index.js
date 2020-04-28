@@ -25,12 +25,15 @@ class Login extends Component {
 
   doLogin = async (event) => {
     event.preventDefault();
+    await this.setState({ ...this.state, isLoading: true });
     this.props.clearStorageUser();
     try {
       const response = await api.post("/accounts/login", {
         email: this.state.email,
         password: this.state.password,
       });
+
+      console.log(response.data);
 
       const data = {
         accessToken: response.data.accessToken,
@@ -40,10 +43,23 @@ class Login extends Component {
         role: response.data.user.role.name || "INTERN",
       };
 
+      console.log(data);
+
       this.props.setUser(data);
       window.location.href = "/app";
     } catch (error) {
-      toast.warn("Credenciais inválidas.");
+      if (error.response) {
+        if (error.response.status === 401) toast.warn("Credenciais inválidas.");
+        else toast.error(error.message);
+      }
+      toast.error(
+        "Aconteceu algum erro não esperado. Contate o suporte clicando aqui!",
+        {
+          onClick: () => (window.location.href = "/app/support"),
+        }
+      );
+    } finally {
+      await this.setState({ ...this.state, isLoading: false });
     }
   };
 
@@ -75,7 +91,7 @@ class Login extends Component {
           <input
             type="submit"
             disabled={this.state.isLoading}
-            value={!this.state.isLoading ? "ENTRAR" : ""}
+            value={!this.state.isLoading ? "ENTRAR" : "Aguarde..."}
           />
         </form>
 
@@ -93,7 +109,10 @@ class Login extends Component {
 
           <span className="Pipe"></span>
 
-          <Link to="/register" title="Registrar no sistema">
+          <Link
+            to="/register"
+            title="Registrar no sistema"
+          >
             Não possuo uma conta
           </Link>
         </div>
