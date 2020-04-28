@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as UserActions from "../../store/actions/User";
 import { bindActionCreators } from "redux";
 import api from "../../services/Api";
+import ButtonLoading from "../Loading/ButtonLoading";
 
 import "./style.css";
 import { toast } from "react-toastify";
@@ -51,13 +52,13 @@ class Login extends Component {
       if (error.response) {
         if (error.response.status === 401) toast.warn("Credenciais inválidas.");
         else toast.error(error.message);
-      }
-      toast.error(
-        "Aconteceu algum erro não esperado. Contate o suporte clicando aqui!",
-        {
-          onClick: () => (window.location.href = "/app/support"),
-        }
-      );
+      } else
+        toast.error(
+          "Aconteceu algum erro não esperado. Contate o suporte clicando aqui!",
+          {
+            onClick: () => (window.location.href = "/app/support"),
+          }
+        );
     } finally {
       await this.setState({ ...this.state, isLoading: false });
     }
@@ -88,11 +89,9 @@ class Login extends Component {
             placeholder="Digite sua senha"
           />
 
-          <input
-            type="submit"
-            disabled={this.state.isLoading}
-            value={!this.state.isLoading ? "ENTRAR" : "Aguarde..."}
-          />
+          <button type="submit" disabled={this.state.isLoading}>
+            {!this.state.isLoading ? "ENTRAR" : <ButtonLoading />}
+          </button>
         </form>
 
         <div className="CardFooter">
@@ -109,10 +108,7 @@ class Login extends Component {
 
           <span className="Pipe"></span>
 
-          <Link
-            to="/register"
-            title="Registrar no sistema"
-          >
+          <Link to="/register" title="Registrar no sistema">
             Não possuo uma conta
           </Link>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
 
-const ButtonLoading = () => <p>Carregando...</p>;
+const ButtonLoading = () => <div className="ButtonLoader"></div>;
 
 export default ButtonLoading;
