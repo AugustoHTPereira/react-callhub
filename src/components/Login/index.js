@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as UserActions from "../../store/actions/User";
 import { bindActionCreators } from "redux";
-import { post } from "../../services/Api";
+import api from "../../services/Api";
 
 import "./style.css";
+import { toast } from "react-toastify";
 
 class Login extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Login extends Component {
     event.preventDefault();
     this.props.clearStorageUser();
     try {
-      const response = await post("/accounts/login", {
+      const response = await api.post("/accounts/login", {
         email: this.state.email,
         password: this.state.password,
       });
@@ -42,8 +43,7 @@ class Login extends Component {
       this.props.setUser(data);
       window.location.href = "/app";
     } catch (error) {
-      console.error(error);
-      if (error.response.status === 401) alert("Acesso negado");
+      toast.warn("Credenciais inválidas.");
     }
   };
 
