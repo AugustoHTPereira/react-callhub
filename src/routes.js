@@ -14,7 +14,6 @@ import Landing from "./pages/Landing";
 
 const Routes = ({ token }) => {
   const isAuthenticated = () => {
-    console.log("USERTOKEN", token);
     try {
       if (token) return true;
 
@@ -35,12 +34,18 @@ const Routes = ({ token }) => {
       );
   };
 
+  const AnonymousRoute = ({ component: Component, ...rest }) => {
+    if (!isAuthenticated()) return <Route component={Component} {...rest} />;
+    else return <Redirect to={`/app`} {...rest} />;
+  };
+
   return (
     <BrowserRouter>
       <Switch>
+        <AnonymousRoute exact path="/register" component={Register} />
+        <AnonymousRoute exact path="/login" component={Login} />
+
         <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
 
         <PrivateRoute exact path="/app" component={App} />
@@ -54,12 +59,8 @@ const Routes = ({ token }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-
-  return {
-    token: state.user.accessToken,
-  };
-};
+const mapStateToProps = (state) => ({
+  token: state.user.accessToken,
+});
 
 export default connect(mapStateToProps)(Routes);
