@@ -1,11 +1,12 @@
 import React from "react";
+import { mapStatus, mapColorStatus, mapPriority } from "../../../../utils/mappers";
 
 // import { Container } from './styles';
 
 const CallData = ({ call }) => (
   <>
     <div className="Details">
-      {call.priority && <p>Prioridade: {call.priority}</p>}
+      {call.priority && <p>Prioridade: {mapPriority(call.priority)}</p>}
 
       {call.category && <p>Categoria: Suporte</p>}
 
@@ -13,8 +14,8 @@ const CallData = ({ call }) => (
 
       <p>Data: {call.createdAt}</p>
 
-      <div className="Situation Warning">
-        <span className="Text">Concluído</span>
+      <div className={`Situation ${mapColorStatus(call.situation)}`}>
+        <span className="Text">{mapStatus(call.situation)}</span>
       </div>
     </div>
 

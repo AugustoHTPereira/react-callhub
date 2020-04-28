@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const api = Axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://localhost:44379/",
 });
 
 export const get = async (url, headers = null) => {
