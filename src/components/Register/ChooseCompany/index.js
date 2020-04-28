@@ -4,6 +4,8 @@ import { bindActionCreators } from "redux";
 import * as UserActions from "../../../store/actions/User";
 import api from "../../../services/Api";
 
+import "./style.css";
+
 class ChooseCompany extends Component {
   constructor(props) {
     super(props);
@@ -33,9 +35,17 @@ class ChooseCompany extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Choose company</h1>
-        <ul>
+      <div className="CompanyRegisterContent">
+        {this.state.companies.length === 0 ? (
+          <p style={{ textAlign: "center" }}>
+            Não encontramos nenhuma empresa.
+          </p>
+        ) : (
+          <p style={{ marginLeft: 5, color: "#787878" }}>
+            Ingresse em uma das empresas encontradas:
+          </p>
+        )}
+        <ul className="CompaniesContent">
           {this.state.companies.map((company) => (
             <li
               onClick={(event) => this.selectCompany(event, company)}
@@ -45,7 +55,10 @@ class ChooseCompany extends Component {
             </li>
           ))}
         </ul>
-        Company: {JSON.stringify(this.props.company)}
+
+        <div className="Centered">
+          <a href="/app">Continuar sem empresa</a>
+        </div>
       </div>
     );
   }

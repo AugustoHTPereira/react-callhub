@@ -28,14 +28,23 @@ class Register extends Component {
         accessToken,
         refreshToken,
         expiressAt,
-        createdAt,
       } = response.data;
 
-      this.props.setUserToken({
+      const responseDetails = await api.get("/users/details", {
+        headers: {
+          Authorization: "Bearer " + accessToken,
+        },
+      });
+
+      this.props.setUser({
+        id: responseDetails.data.user_data.id,
+        name: responseDetails.data.user_data.name,
+        email: responseDetails.data.user_data.email,
+        createdAt: responseDetails.data.user_data.createdAt,
+        role: responseDetails.data.user_data.role.name,
         accessToken,
         refreshToken,
         expiressAt,
-        createdAt,
       });
 
       this.props.next("COMPANY");

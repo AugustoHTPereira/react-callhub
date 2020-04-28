@@ -21,7 +21,12 @@ export default function user(state = INITIAL_STATE, action) {
       return { ...state, company: action.payload };
 
     case "SET_USERTOKEN":
-      return { ...state, token: action.payload };
+      return {
+        ...state,
+        accessToken: action.payload.accessToken,
+        refreshToken: action.payload.refreshToken,
+        expiressAt: action.payload.ExpiressAt
+      };
 
     case "CLEAR_USER":
       return INITIAL_STATE;

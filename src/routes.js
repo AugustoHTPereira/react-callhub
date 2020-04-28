@@ -14,6 +14,7 @@ import Landing from "./pages/Landing";
 
 const Routes = ({ token }) => {
   const isAuthenticated = () => {
+    console.log("USERTOKEN", token);
     try {
       if (token) return true;
 
@@ -53,8 +54,12 @@ const Routes = ({ token }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  token: state.user.accessToken,
-});
+const mapStateToProps = (state) => {
+  console.log(state);
+
+  return {
+    token: state.user.accessToken,
+  };
+};
 
 export default connect(mapStateToProps)(Routes);

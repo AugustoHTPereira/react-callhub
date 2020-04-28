@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import api from "../../../services/Api";
 
+import "./style.css";
+
 class ChooseDepartment extends Component {
   constructor(props) {
     super(props);
@@ -32,31 +34,73 @@ class ChooseDepartment extends Component {
     )
       return;
 
-    await api.post(`users/department/${departmentId}`, {}, {
-      headers: {
-        Authorization: `Bearer ${this.props.accessToken}`
+    await api.post(
+      `users/department/${departmentId}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${this.props.accessToken}`,
+        },
       }
-    });
+    );
+
+    window.location.href = "/app";
   }
 
   render() {
     return (
-      <div>
-        <h1>Choose a department for {this.state.company.name}</h1>
-        {this.state.departments.length > 0 ? (
-          <ul>
-            {this.state.departments.map((department, index) => (
-              <li
-                onClick={(event) => this.selectDepartment(event, department.id)}
-                key={index}
-              >
-                {department.name}
-              </li>
-            ))}
-          </ul>
+      <div className="RegisterDepartmentsContent">
+        {this.state.departments.length === 0 ? (
+          <p style={{ textAlign: "center" }}>
+            Não encontramos nenhum departamento.
+          </p>
         ) : (
-          <h1>No department found</h1>
+          <>
+            <p style={{ marginLeft: 5, color: "#787878" }}>
+              Ingresse em um dos departamentos encontrados na empresa{" "}
+              {this.state.company.name}:
+            </p>
+            <ul className="DepartmentsContent">
+              {this.state.departments.map((department, index) => (
+                <li
+                  onClick={(event) =>
+                    this.selectDepartment(event, department.id)
+                  }
+                  key={index}
+                >
+                  {department.name}
+                </li>
+              ))}
+            </ul>
+          </>
         )}
+
+        <div
+          style={{
+            marginTop: 15,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <button
+            onClick={(event) => {
+              this.props.next("COMPANY");
+              event.preventDefault();
+            }}
+            className="Link"
+          >
+            Voltar
+          </button>
+          <button
+            onClick={(event) => {
+              window.location.href = "/app";
+              event.preventDefault();
+            }}
+            className="Link"
+          >
+            Continuar sem departamento
+          </button>
+        </div>
       </div>
     );
   }
@@ -64,7 +108,7 @@ class ChooseDepartment extends Component {
 
 const mapStateToProps = (state) => ({
   company: state.user.company,
-  accessToken: state.user.token.accessToken,
+  accessToken: state.user.accessToken,
 });
 
 export default connect(mapStateToProps)(ChooseDepartment);
