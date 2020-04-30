@@ -1,0 +1,54 @@
+.UserDetailsPageContent {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  position: relative;
+}
+
+.UserDetailsPageContent .HeaderUserData {
+  display: flex;
+  margin-top: 25px;
+}
+
+.UserDetailsPageContent .HeaderUserData div {
+  flex: 1;
+  margin: 0 25px;
+  align-self: center;
+}
+
+.UserDetailsPageContent .HeaderUserData h5 {
+  color: #787878;
+  font-weight: 300;
+}
+
+.UserDetailsPageContent .NormalizeText {
+  text-transform: capitalize;
+}
+
+.UserDetailsPageContent .__userImg {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.UserDetailsPageContent .SmallLight {
+  font-size: 11px;
+  color: #787878;
+}
+
+.UserDetailsPageContent .Spacer {
+  height: 0.6px;
+  width: 100%;
+  background-color: #c9c9c9;
+  display: block;
+  margin: 25px 0;
+}
+
+.UserDetailsPageContent .Work {
+  display: flex;
+  justify-content: center;
+  color: #797979;
+  text-transform: capitalize;
+}

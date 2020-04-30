@@ -49,19 +49,22 @@ class Login extends Component {
       this.props.setUser(data);
       window.location.href = "/app";
     } catch (error) {
+      console.log("ERRO LOGIN", error);
+      this.setState({ ...this.state, password: "" });
       if (error.response) {
         if (error.response.status === 401) toast.warn("Credenciais inválidas.");
         else toast.error(error.message);
       } else
         toast.error(
-          "Aconteceu algum erro não esperado. Contate o suporte clicando aqui!",
+          "Aconteceu algum erro não esperado. " +
+            error.message +
+            " Contate o suporte clicando aqui!",
           {
             onClick: () => (window.location.href = "/app/support"),
           }
         );
-    } finally {
-      await this.setState({ ...this.state, isLoading: false });
     }
+    await this.setState({ ...this.state, isLoading: false });
   };
 
   render() {

@@ -1,13 +1,39 @@
 .ButtonLoader {
-  border: 1.7px solid #f9f9f944; /* Light grey */
-  border-top: 1.7px solid #f9f9f9; /* Blue */
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ButtonLoader.Small {
+  width: 15px;
+  height: 15px;
+  border: 1.7px solid #f9f9f944; /* Light grey */
+}
+
+.ButtonLoader.Medium {
+  width: 45px;
+  height: 45px;
+  border: 2.7px solid #f9f9f944; /* Light grey */
+}
+
+.ButtonLoader.Bigger {
+  width: 75px;
+  height: 75px;
+  border: 5.7px solid #f9f9f944;
+}
+
+.ButtonLoader.Light {
+  border-top-color: #f9f9f9;
+}
+
+.ButtonLoader.Primary {
+  border-top-color: #2274a5;
 }

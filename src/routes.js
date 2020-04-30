@@ -11,6 +11,7 @@ import Calls from "./pages/Calls";
 import NewCall from "./pages/Calls/New";
 import DetailsCall from "./pages/Calls/Details";
 import Landing from "./pages/Landing";
+import UserDetails from "./pages/UserDetails";
 
 const Routes = ({ token }) => {
   const isAuthenticated = () => {
@@ -52,6 +53,7 @@ const Routes = ({ token }) => {
         <PrivateRoute exact path="/calls" component={Calls} />
         <PrivateRoute exact path="/calls/new" component={NewCall} />
         <PrivateRoute exact path="/calls/:id" component={DetailsCall} />
+        <PrivateRoute exact path="/user/:id" component={UserDetails} />
 
         <Route component={NotFound} />
       </Switch>

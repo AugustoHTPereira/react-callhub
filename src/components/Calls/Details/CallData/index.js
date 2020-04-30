@@ -10,7 +10,7 @@ const CallData = ({ call }) => (
 
       {call.category && <p>Categoria: Suporte</p>}
 
-      <p>Criador: Augusto Henrique Tomba Pereira</p>
+      <a href="/user/20bf6788-20b3-4877-9a43-82482cb64345">Criador: Augusto Henrique Tomba Pereira</a>
 
       <p>Data: {call.createdAt}</p>
 

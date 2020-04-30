@@ -1,5 +1,7 @@
+import React from "react";
 import Axios from "axios";
 import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
 
 const api = Axios.create({
   baseURL: "https://localhost:44379/",
@@ -55,13 +57,20 @@ export const del = async (url, headers = null) => {
 
 export default api;
 
-const handleRequestError = (code) => errors[code]();
+const handleRequestError = (code) =>
+  errors[code] !== undefined && errors[code]();
 
 const errors = {
-  500: () =>
-    toast.error(`Falha ao processar sua solicitação no servidor. Código: 500`, {
-      autoClose: false,
+  500: (
+    message = `Falha ao processar sua solicitação no servidor. Código: 500`,
+    onClose = null,
+    autoClose = false
+  ) =>
+    toast.error(message, {
+      autoClose: autoClose,
+      onClose: onClose,
     }),
+
   401: () =>
     toast.warn(
       `Não autorizado. Seu acesso está expirado e será redirecionado ao login.`,
